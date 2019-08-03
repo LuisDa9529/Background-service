@@ -95,14 +95,23 @@ public class MainActivity extends AppCompatActivity{
         Intent serviceIntent = new Intent(getApplicationContext(), MediaService.class);
         if(!isMusicPlaying) {
             serviceIntent.setAction(MediaService.ACTION_PLAY);
-            playView.setImageResource(R.drawable.ic_pause);
+//            playView.setImageResource(R.drawable.ic_pause);
             isMusicPlaying = true;
         }else {
             serviceIntent.setAction(MediaService.ACTION_PAUSE);
-            playView.setImageResource(R.drawable.ic_play);
+//            playView.setImageResource(R.drawable.ic_play);
             isMusicPlaying = false;
         }
         startService(serviceIntent);
+    }
+
+    public void changeMedia(Boolean playing){
+        ImageView view = findViewById(R.id.playPauseB);
+        if(playing){
+            view.setImageResource(R.drawable.ic_pause);
+        }else{
+            view.setImageResource(R.drawable.ic_play);
+        }
     }
 
     public void nextTrack(){

@@ -21,7 +21,7 @@ public class App extends Application {
             NotificationChannel serviceChannel = new NotificationChannel(
                     CHANNEL_ID,
                     "Service Channel",
-                    NotificationManager.IMPORTANCE_LOW
+                    NotificationManager.IMPORTANCE_DEFAULT
             );
             serviceChannel.setDescription("Media Channel");
 
